@@ -1,0 +1,10 @@
+{
+    "LoginSuccess":{
+        "email": "admin@test.com",
+        "senha": "test123"
+    },
+    "LoginFail":{
+        "email": "atest@test.com",
+        "senha": "test"
+    }
+}
