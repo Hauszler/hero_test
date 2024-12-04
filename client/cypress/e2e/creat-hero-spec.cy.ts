@@ -1,5 +1,5 @@
 import loginPage from '../pages/loginPage'
-import creatHero from '../pages/creatHero'
+import creatHero from '../pages/creatHeroPage'
 import datauser from '../fixtures/userdata.json'
 import homePage from '../pages/homePage'
 
@@ -16,7 +16,7 @@ describe('Creat New Hero', () => {
     CreatHero.newHeroForm('New hero', 65,0,0)
     CreatHero.submmitForm()
   })
-  it('fail', () => {
+  it('fail', () => {//fazer erro a erro?
     LoginPage.simpleLogin(datauser.LoginSuccess.email, datauser.LoginSuccess.senha)
     HomePage.creatHero()
     CreatHero.checkLocation()
