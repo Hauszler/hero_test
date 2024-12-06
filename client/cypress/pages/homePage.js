@@ -12,6 +12,8 @@ class homePage {
             nameHero: "[data-cy='name']",
             powerHero: "[data-cy='powers']",
             editHero: "[data-cy='pencil']",
+            deletHero: "[data-cy='trash']",
+            body: "body"
         }
         return selectors
     }
@@ -95,6 +97,25 @@ class homePage {
         cy.get(this.selectorsList().powerHero).eq(0).should('have.text', power+" ")
 
     }
+//Editar heroi
+    deletHeroSuccsess(){
+        cy.get(this.selectorsList().nameHero).eq(0).invoke('text').then((text)=> {
+            const initialValue = text
+        cy.get(this.selectorsList().deletHero).eq(0).click()
+        cy.contains("Yes").click()
+        cy.get(this.selectorsList().body).contains(initialValue).should('not.exist')
+        })
+    }
+
+    deletHeroFail(){
+        cy.get(this.selectorsList().nameHero).eq(0).invoke('text').then((text)=> {
+            const initialValue = text
+        cy.get(this.selectorsList().deletHero).eq(0).click()
+        cy.contains("No").click()
+        cy.get(this.selectorsList().body).contains(initialValue).should('exist')
+        })
+    }
+
 }
 
 
