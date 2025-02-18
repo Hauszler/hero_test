@@ -14,7 +14,6 @@ describe('Editar Heroi', () => {
     EditHeroPage.editHeroSuccess(herodata.Edit1.name,herodata.Edit1.price,herodata.Edit1.fans,herodata.Edit1.saves,herodata.Edit1.power)
     HomePage.checklocation()
     HomePage.checkHeroEdit(herodata.Edit1.name,herodata.Edit1.price,herodata.Edit1.fans,herodata.Edit1.saves,herodata.Edit1.power)
-    //implementar check da alteração, como eu faço isso, preciso comparar o antes e o depois 
   })
 
   it('Fail', () => {
